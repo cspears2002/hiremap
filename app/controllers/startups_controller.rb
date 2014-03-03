@@ -1,4 +1,7 @@
 class StartupsController < ApplicationController
+  respond_to :json
+
+  # GET /startups/
   def index
     @startups = Startup.hiring.within_bounds user_location_params
     respond_with @startups
